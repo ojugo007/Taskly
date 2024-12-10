@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles/styles.css">
+    <title>Document</title>
+</head>
+<body>
+    <%- include("./partials/header.ejs") %>
+
+    <main class="container">
+        <div>
+            <% if(task.state == "pending"){%>
+                <h3>are you sure you want to delete a <%=task.state%> task?</h3>
+                <p><%=task.description%></p>
+
+                <form action="/task/<%= task._id %>/delete" method="post" >
+                    <!-- <input type="hidden" name="_method" value="DELETE"> -->
+                    <button type="submit">Yes, Delete Task</button>
+                    <a href="/task">Cancel</a>
+                </form>
+            <%}else{%>
+                <h3>Congratulations🥇!!! on completing your task</h3>
+                <p>delete this task : <%=task.description%></p>
+              
+                <form action="/task/<%= task._id %>/delete" method="post" >
+                    <!-- <input type="hidden" name="_method" value="DELETE"> -->
+                    <button type="submit">Delete Task</button>
+                </form>
+            <%} %>
+        </div>
+    
+    </main>
+
+    <%- include("./partials/footer.ejs") %>
+</body>
+</html>

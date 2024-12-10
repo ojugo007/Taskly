@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles/styles.css">
+    <title>Document</title>
+</head>
+<body>
+    <%- include('./partials/header.ejs') %>
+     <main class="container">
+        <h1>Edit Task</h1>
+
+        <form action="/task/<%= task._id %>/update" method="POST">
+            <div class="edit-form-control">
+                <label for="description">Task Description:</label>
+                <input type="text" id="description" name="description" value="<%= task.description %>" required>
+            </div>
+
+            <div class="edit-form-control">
+                <label for="state">Task State:</label>
+                <select id="state" name="state">
+                    <option value="pending" <%= task.state === 'pending' ? 'selected' : '' %>>Pending</option>
+                    <option value="completed" <%= task.state === 'completed' ? 'selected' : '' %>>Completed</option>
+                </select>
+            </div>
+
+            <button type="submit">Update Task</button>
+        </form>
+     </main>
+    <%- include('./partials/footer.ejs') %>
+</body>
+</html>

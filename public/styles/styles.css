@@ -1,0 +1,199 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+:root{
+    --primary-color:#5271ff;
+    --secondary-color:#0cc0df;
+    --main: whitesmoke;
+    --box-shadow: 0 1px 10px rgba(14, 75, 207, 0.15)
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
+nav{
+    padding: 20px 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--main) ;
+}
+nav ul{
+    display: flex;
+    gap: 20px;
+    list-style-type: none;
+}
+nav ul li a{
+    color: var(--secondary-color);
+    font-weight: 400;
+    text-decoration: none;
+}
+nav ul li a:hover{
+    color: var(--primary-color);
+    padding-bottom: 2px;
+    border-bottom: 1px solid var(--primary-color);
+}
+
+header nav img{
+ width: 90px;
+ height: 60px;
+}
+.container{
+    width: 100%;
+    min-height: 65vh;
+    padding: 100px 50px;
+}
+.container form{
+    max-width: 450px;
+    margin: 0 auto;
+    padding: 50px 35px;
+    border-radius: 5px;
+    box-shadow:var(--box-shadow);
+    background-color: #fff;
+}
+.task-form-wrapper form{
+    max-width: 50%;
+}
+.container form input, form select{
+    padding:12px;
+    border-radius: 5px;
+    border: 1px solid var(--secondary-color);
+    font-family: "Montserrat", sans-serif;
+    background-color: transparent;
+}
+.container form input:focus, form select:focus{
+    outline: 1px solid var(--primary-color) !important;
+}
+.container form input::placeholder, form select option{
+    font-family: "Montserrat", sans-serif;
+    color: #333;
+}
+
+form select{
+    margin:20px 0px;
+}
+.auth_user form button,
+.container form button {
+    font-family: "Montserrat", sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--primary-color);
+    background-color: var(--secondary-color);
+    border: none;
+    padding: 12px;
+    border-radius: 5px;
+    margin-bottom: 5px;
+}
+/* .auth_user form button{
+
+} */
+.container form button{
+    width: 100%;
+}
+.auth_user{
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.container form a{
+    color: var(--secondary-color);
+    text-decoration: none;
+}
+.container form h2{
+    text-align: center;
+    padding-bottom: 35px;
+    color: #333;
+}
+.container form .form-control{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 30px;
+}
+.task-list-container{
+    width: 50%;
+    margin: 50px auto 0;
+    padding: 50px 30px;
+    box-shadow: var(--box-shadow);
+    border-radius: 5px; 
+}
+
+.task-form-wrapper form{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+}
+.task-form-wrapper form input{
+    flex: 2;
+}
+.task-form-wrapper form button{
+    flex: 1;
+}
+
+.task-list-container p, .task-list-container h2{
+    text-align: center;
+}
+.task-list>li{
+    list-style: "😎 ";
+}
+.task-list{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 25px 0;
+}
+.status_action_list{
+    list-style-type: none;
+    display: flex;
+    gap: 25px;
+    align-items: center;
+    justify-content: space-between;
+}
+.completed, .pending, .update a, .delete a{
+    padding: 8px;
+    border-radius: 5px;
+}
+.pending{
+    color: rgb(66, 66, 2);
+    background: rgba(255, 255, 0, 0.463);
+}
+.completed{
+    color: rgb(1, 64, 1);
+    background: rgba(2, 254, 2, 0.613);
+}
+.update a{
+    text-decoration: none;
+    color:#fff;
+    background-color: var(--primary-color);
+    white-space: nowrap;
+}
+.delete a{
+    text-decoration: none;
+    color:#fff;
+    background-color: orangered;
+    white-space: nowrap;
+}
+.edit-form-control{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.container h1{
+    text-align: center;
+    padding-bottom: 50px;
+}
+
+footer{
+    padding: 80px 30px;
+    text-align: center;
+    color: #fff;
+    background-color: var(--secondary-color);
+}

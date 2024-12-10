@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/styles.css">
+    <title>Task</title>
+</head>
+<body>
+    <%- include("./partials/header.ejs") %>
+    <main class="container">
+        <div class="task-form-wrapper">
+            <form action="/task" method="post">
+                <input type="text" name="description" placeholder="Enter your task">
+                <button type="submit">Create Task</button>
+            </form>
+        </div>
+        <div class="task-list-container">
+            <%if(tasks.length === 0){%>
+                  
+                <p>you have no task</p>
+                   
+            <%}else{%>
+                    <h2>Todo list</h2>
+                <% tasks.forEach((task)=>{%>
+                    <ul class="task-list">
+                        <li><%=task.description %></li>
+                        <ul class="status_action_list">
+                            <%if(task.state ==="pending"){%>
+                                <li class="pending"><%=task.state %> </li>
+                            <%}else{%>
+                                <li class="completed"><%=task.state %> </li>
+                            <%}%>
+
+                            <li class="update"><a href="/task/<%= task._id %>/edit">Update Task</a></li>
+                            <li class="delete"><a href="/task/<%= task._id %>/confirm-delete">Delete Task</a></li>
+
+                        </ul>
+                    </ul>
+                <%})%>
+            <%}%>
+        </div>
+    </main>
+    
+    <%- include("./partials/footer.ejs") %>
+</body>
+</html>
