@@ -9,9 +9,24 @@
 <body>
     <%- include('./partials/header.ejs') %>
     <main class="container">
-        <h1>Welcome to <span>Taskly</span> - A Altschool Africa Project</h1>
+        <div class="flex-wrap">
+            <div class="wrap-one">
+                <h1 class="heading">Welcome to 
+                    <span>Taskly</span>
+                    <span class="sub-heading">- Your simple and efficient task management solution.</span>
+                </h1>
 
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore perspiciatis, ipsum quidem saepe molestias voluptatibus.</p>
+                <p>With Taskly, you can easily organize, track, and manage your tasks—all in one place. Whether you're working on personal projects, managing work assignments, or just keeping track of your daily to-dos, Taskly helps you stay on top of your goals.</p>
+
+                <div class="auth-links">
+                    <a href="/signup" class="sign-btn">Get Started</a>
+                    <a href="/login" class="log-btn"> Log in</a>
+                </div>
+            </div>
+            <div class="wrap-two">
+                <img src="/assets/hero-img3.jpg" alt="">
+            </div>
+        </div>
 
     </main>
     <%- include('./partials/footer.ejs') %>

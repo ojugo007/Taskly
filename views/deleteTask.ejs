@@ -10,22 +10,20 @@
     <%- include("./partials/header.ejs") %>
 
     <main class="container">
-        <div>
+        <div class="delete-section">
             <% if(task.state == "pending"){%>
                 <h3>are you sure you want to delete a <%=task.state%> task?</h3>
                 <p><%=task.description%></p>
 
-                <form action="/task/<%= task._id %>/delete" method="post" >
-                    <!-- <input type="hidden" name="_method" value="DELETE"> -->
+                <form action="/task/<%= task._id %>/delete" method="post" class="confirm-form">
                     <button type="submit">Yes, Delete Task</button>
                     <a href="/task">Cancel</a>
                 </form>
             <%}else{%>
-                <h3>Congratulations🥇!!! on completing your task</h3>
-                <p>delete this task : <%=task.description%></p>
+                <h3>Congratulations🥇!!! on completing this task</h3>
+                <p>delete this task : <b><%=task.description%></b> </p>
               
                 <form action="/task/<%= task._id %>/delete" method="post" >
-                    <!-- <input type="hidden" name="_method" value="DELETE"> -->
                     <button type="submit">Delete Task</button>
                 </form>
             <%} %>
