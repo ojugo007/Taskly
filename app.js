@@ -38,7 +38,7 @@ passport.deserializeUser(async(id, done)=>{
     done(null, user)
 })
 
-app.set("views", "views")
+app.set('views', path.join(__dirname, 'views'));  
 app.set("view engine", "ejs")
 
 //Middleware to Make req.user globally available in EJS views
